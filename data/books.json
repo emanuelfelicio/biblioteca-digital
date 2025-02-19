@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "titulo": "Um estudo em vermelho",
+        "autor": "Arthur Conan",
+        "ano_publicacao": "1887",
+        "categoria": "Ficção",
+        "editora": "Martin Claret"
+    },
+    {
+        "id": 3,
+        "titulo": "Revolução dos bichos",
+        "autor": "George Orwell",
+        "ano_publicacao": "1945",
+        "categoria": "Fábula",
+        "editora": "Editora Brasil"
+    },
+    {
+        "id": 4,
+        "titulo": "harry potter e a pedra filosofal",
+        "autor": "J. K. Rowling",
+        "ano_publicacao": "2001",
+        "categoria": "Ficção",
+        "editora": "Rocco"
+    }
+]
