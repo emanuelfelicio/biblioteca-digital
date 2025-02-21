@@ -2,6 +2,7 @@ from utils.ansi_colors import RESET, RED, GREEN, YELLOW, BLUE, CYAN, WHITE
 from controllers.library_controller import LibraryController
 import os
 
+
 def clear_screen():
     # For Windows
     if os.name == 'nt':
@@ -56,7 +57,7 @@ class Menu:
         self.controller.listar_livros()
 
     def editar_livro(self):
-        id_livro = int(input("ID do livro a ser editado: "))
+        id_livro = (input("ID do livro a ser editado: ")) 
         titulo = input("Novo Título (pressione Enter para manter o atual): ")
         autor = input("Novo Autor (pressione Enter para manter o atual): ")
         ano_publicacao = input("Novo Ano de Publicação (pressione Enter para manter o atual): ")

@@ -1,6 +1,7 @@
 from models.class_book import Livro
 from utils.ansi_colors import RESET, RED, GREEN, YELLOW, BLUE, CYAN, WHITE
 from utils.file_manager import FileManager
+from utils.validators import validar_ano_publicacao,validar_id_livro,validar_campo_nao_vazio
 
 class LibraryController:
     def __init__(self):
@@ -8,6 +9,13 @@ class LibraryController:
         self.livros = self.file_manager.carregar_livros()
 
     def cadastrar_livro(self, titulo, autor, ano_publicacao, categoria, editora):  # 1. Adicionar novos livros ao acervo
+
+        titulo = validar_campo_nao_vazio(titulo,"Titulo")
+        autor = validar_campo_nao_vazio(autor,"Autor")
+        ano_publicacao = validar_ano_publicacao(ano_publicacao)
+        categoria = validar_campo_nao_vazio(categoria,"Categoria")
+        editora= validar_campo_nao_vazio(editora,"Categoria")
+      
 
         '''Criando um objeto da classe Livro'''
         livro = Livro(len(self.livros) + 1, titulo, autor, ano_publicacao, categoria, editora)
@@ -36,6 +44,7 @@ class LibraryController:
             """)
 
     def editar_livro(self,id_livro, titulo, autor, ano_publicacao, categoria, editora):  # 3. Editar informações de um livro existente
+        id_livro = validar_id_livro(id_livro)
         for livro in self.livros:
             if livro.id == id_livro:
                 if titulo:
@@ -43,7 +52,7 @@ class LibraryController:
                 if autor:
                     livro.autor = autor
                 if ano_publicacao:
-                    livro.ano_publicacao = ano_publicacao
+                    livro.ano_publicacao = validar_ano_publicacao(ano_publicacao)
                 if categoria:
                     livro.categoria = categoria
                 if editora:
