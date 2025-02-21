@@ -35,8 +35,23 @@ class LibraryController:
             🏢 Editora: {livro.editora}
             """)
 
-    def editar_livro():  # 3. Editar informações de um livro existente
-        pass
+    def editar_livro(self,id_livro, titulo, autor, ano_publicacao, categoria, editora):  # 3. Editar informações de um livro existente
+        for livro in self.livros:
+            if livro.id == id_livro:
+                if titulo:
+                    livro.titulo = titulo
+                if autor:
+                    livro.autor = autor
+                if ano_publicacao:
+                    livro.ano_publicacao = ano_publicacao
+                if categoria:
+                    livro.categoria = categoria
+                if editora:
+                    livro.editora = editora
+                self.file_manager.salvar_livros(self.livros)
+                return
+        print(RED + f"Livro com id:{id_livro} não encontrado." + RESET)
+        
 
     def remover_livro(self, id_livro):  # 4. Remover um livro do acervo
         for livro in self.livros:
@@ -45,4 +60,4 @@ class LibraryController:
                 self.file_manager.salvar_livros(self.livros)
                 print(GREEN + f"\n--- ✅ Livro '{livro.titulo}' removido com sucesso! ---" + RESET)
                 return
-        print(RED + "Livro não encontrado." + RESET)
+        print(RED + f"Livro com id:{id_livro} não encontrado." + RESET)
