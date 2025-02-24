@@ -17,8 +17,15 @@ class LibraryController:
         editora= validar_campo_nao_vazio(editora,"Categoria")
       
 
+        
         '''Criando um objeto da classe Livro'''
-        livro = Livro(len(self.livros) + 1, titulo, autor, ano_publicacao, categoria, editora)
+      
+        if(len(self.livros) == 0):
+            livro = Livro(1, titulo, autor, ano_publicacao, categoria, editora)
+        else:
+            last_index = len(self.livros) - 1
+            livro = Livro(self.livros[last_index].id +1, titulo, autor, ano_publicacao, categoria, editora)
+       
 
         '''Adiciona o livro à lista e salva no JSON'''
         self.livros.append(livro)
