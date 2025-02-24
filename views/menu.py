@@ -1,7 +1,8 @@
 from utils.ansi_colors import RESET, RED, GREEN, YELLOW, BLUE, CYAN, WHITE
+from utils.progress_bar import progress_bar
 from controllers.library_controller import LibraryController
+import time
 import os
-
 
 def clear_screen():
     # For Windows
@@ -16,7 +17,9 @@ class Menu:
         self.controller = controller
 
     def mostrar_menu(self):
-        print(CYAN + "--- Bem-Vindo a Biblioteca Digital ---\n" + RESET)
+        print(CYAN + "===============================" + RESET)
+        print(CYAN + "Bem-Vindo a Biblioteca Digital" + RESET)
+        print(CYAN + "===============================\n" + RESET)
         print(GREEN + "[1] Adicionar novos livros ao acervo." + RESET)
         print(YELLOW + "[2] Listar e visualizar detalhes dos livros cadastrados." + RESET)
         print(BLUE + "[3] Editar informações de um livro existente." + RESET)
@@ -27,7 +30,7 @@ class Menu:
         exit = False
         while not exit:
             self.mostrar_menu()
-            option = input("Escolha uma opção: ")
+            option = input("\nEscolha uma opção: ")
 
             clear_screen()
             match option:
@@ -40,7 +43,9 @@ class Menu:
                 case "4":
                     self.remover_livro()
                 case "5":
-                    print("Saindo do programa...")
+                    for item in progress_bar(range(100), prefix="Saindo:", size=50):
+                        time.sleep(0.02)  
+                    print("Até a próxima!")
                     exit = True
                 case _:
                     print("Tente novamente, digite uma opção válida por favor!\n")

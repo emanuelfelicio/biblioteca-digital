@@ -1,7 +1,7 @@
 [
     {
         "id": 2,
-        "titulo": "Um estudo em vermelho",
+        "titulo": "Jogos vorazes",
         "autor": "Arthur Conan",
         "ano_publicacao": "1887",
         "categoria": "Ficção",
@@ -16,11 +16,11 @@
         "editora": "Editora Brasil"
     },
     {
-        "id": 4,
-        "titulo": "harry potter e a pedra filosofal",
-        "autor": "J. K. Rowling",
-        "ano_publicacao": "2001",
+        "id": 3,
+        "titulo": "Harry potter",
+        "autor": "Lina Frida",
+        "ano_publicacao": "2000",
         "categoria": "Ficção",
-        "editora": "Rocco"
+        "editora": "Showmen"
     }
 ]
