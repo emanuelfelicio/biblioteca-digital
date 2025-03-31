@@ -1,5 +1,5 @@
 
-Projeto desenvolvido na disciplina de lógica de programação do curso Capacita Brasil/C-Jovem
+🎓 Projeto desenvolvido na disciplina de lógica de programação do curso Capacita Brasil/C-Jovem
 
 # 📚 Biblioteca Digital
 
