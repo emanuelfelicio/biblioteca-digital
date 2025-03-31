@@ -1,6 +1,10 @@
+
+Projeto desenvolvido na disciplina de lógica de programação do curso Capacita Brasil/C-Jovem
+
 # 📚 Biblioteca Digital
 
 Este é um projeto de Biblioteca Digital desenvolvido em Python. O sistema permite gerenciar um acervo de livros diretamente pelo terminal, utilizando um arquivo JSON para armazenamento dos dados. 
+
 
 ## Funcionalidades
 
